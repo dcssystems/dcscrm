@@ -15,27 +15,34 @@
         <div class="mai-wrapper mai-login">
             <div class="main-content container">
                 <div class="splash-container row">
-                    <div class="col-sm-6"><!--span class="splash-message text-right">Hello!<br> is good to<br> see you again</span><span class="alternative-message text-right">Don't have an account? <a href="#">Sign Up</a></span--></div>
-                    <div class="col-sm-6 form-message center">
-                        <img src="assets/img/logo-2x.png" alt="logo" width="169" height="28" class="logo-img mb-4" />
-                        <span class="splash-description text-center mt-5 mb-5">Login to your account</span>
-                        <form>
-                            <div class="form-group">
-                                <div class="input-group"><span class="input-group-addon"><i class="icon s7-user"></i></span>
-                                    <input id="username" type="text" placeholder="Username" autocomplete="off" class="form-control">
+                    <div class="container-fluid">
+                        <div class="col-sm-12 form-message">
+                            <img src="assets/img/dcs-ag.png" alt="logo" width="169" height="53" class="logo-img mb-4" />
+                            <span class="splash-description text-center mt-5 mb-5">Ingresar datos de usuario</span>
+                            <form>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="icon s7-user"></i>
+                                        </span>
+                                        <input id="username" type="text" placeholder="Usuario" autocomplete="off" class="form-control">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group"><span class="input-group-addon"><i class="icon s7-lock"></i></span>
-                                    <input id="password" type="password" placeholder="Password" class="form-control">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="icon s7-lock"></i>
+                                        </span>
+                                        <input id="password" type="password" placeholder="Contraseña" class="form-control">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group login-submit">
-                                <button data-dismiss="modal" type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
-                            </div>
-                        </form>
-                        <div class="out-links"><a href="#">© <?php echo date('Y'); ?> Dir Con Solutions </a></div>
-                    </div>
+                                <div class="form-group login-submit">
+                                    <button data-dismiss="modal" type="submit" class="btn btn-lg btn-primary btn-block">Enviar</button>
+                                </div>
+                            </form>
+                            <div class="out-links"><a href="#">© <?php echo date('Y'); ?> Dircon Solutions </a></div>
+                        </div>
+                    </div>                    
                 </div>
             </div>
         </div>
