@@ -6,10 +6,11 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <link rel="shortcut icon" href="assets/img/favicon.png">
-        <title>.:: DirCon Solution ::.</title>
+        <title>.:: Dircon Solutions ::.</title>
         <link rel="stylesheet" type="text/css" href="assets/lib/stroke-7/style.css"/>
         <link rel="stylesheet" type="text/css" href="assets/lib/perfect-scrollbar/css/perfect-scrollbar.min.css"/>
-        <link rel="stylesheet" href="assets/css/app.css" type="text/css"/>
+        <!--link rel="stylesheet" href="assets/css/app.css" type="text/css"/-->
+        <link href="assets/css/themes/orange-juice.css" rel="stylesheet" type="text/css"/>
     </head>
     <body class="mai-splash-screen">
         <div class="mai-wrapper mai-login">
@@ -17,9 +18,9 @@
                 <div class="splash-container row">
                     <div class="container-fluid">
                         <div class="col-sm-12 form-message">
-                            <img src="assets/img/dcs-ag.png" alt="logo" width="169" height="53" class="logo-img mb-4" />
-                            <span class="splash-description text-center mt-5 mb-5">Ingresar datos de usuario</span>
-                            <form>
+                            <img src="assets/img/dcs-ag.png" alt="logo" width="169" height="60" class="logo-img mb-4" />
+                            <span class="splash-description text-center mt-5 mb-5">Ingrese sus datos</span>
+                            <form method="POST" action="<?php echo URL::base(); ?>persons/dashboard">
                                 <div class="form-group">
                                     <div class="input-group">
                                         <span class="input-group-addon">

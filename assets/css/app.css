@@ -8519,7 +8519,7 @@ p {
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
-    padding: 60px 30px 40px;
+    padding: 60px 50px 40px;
     background-color: #363636;
     color: #d4d4d4; }
     .splash-container .form-message .out-links a {

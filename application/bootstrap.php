@@ -104,7 +104,7 @@ if (isset($_SERVER['KOHANA_ENV']))
  */
 Kohana::init(array(
     'base_url'   => '/dcscrm/',
-    'index_file' => FALSE
+    'index_file' => true,
 ));
 
 /**
@@ -124,10 +124,10 @@ Kohana::modules(array(
 	// 'auth'       => MODPATH.'auth',       // Basic authentication
 	// 'cache'      => MODPATH.'cache',      // Caching with multiple backends
 	// 'codebench'  => MODPATH.'codebench',  // Benchmarking tool
-	// 'database'   => MODPATH.'database',   // Database access
+	'database'   => MODPATH.'database',   // Database access
 	// 'image'      => MODPATH.'image',      // Image manipulation
 	// 'minion'     => MODPATH.'minion',     // CLI Tasks
-	// 'orm'        => MODPATH.'orm',        // Object Relationship Mapping
+	'orm'        => MODPATH.'orm',        // Object Relationship Mapping
 	// 'unittest'   => MODPATH.'unittest',   // Unit testing
 	// 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
 	));
@@ -147,6 +147,23 @@ Kohana::modules(array(
  */
 Route::set('default', '(<controller>(/<action>(/<id>)))')
     ->defaults(array(
-            'controller' => 'Login',
-            'action'     => 'index',
+        'controller' => 'Login',
+        'action'     => 'index',
+    ));
+
+/**** 
+ * Route Persons: Module Persons 
+ * ****/
+Route::set('persons/dashboard', '<controller>(/<action>(/<id>))')
+    ->defaults(array(
+        'directory' => 'Controller',
+        'controller' => 'Persons',
+        'action'     => 'dashboard',
+    ));
+
+Route::set('persons', '<controller>(/<action>(/<id>))')
+    ->defaults(array(
+        'directory' => 'Controller',
+        'controller' => 'Persons',
+        'action'     => 'edit|new',
     ));

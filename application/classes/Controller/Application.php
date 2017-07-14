@@ -1,4 +1,4 @@
-<?php
+<?php defined('SYSPATH') or die('No direct script access.');
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -11,6 +11,6 @@
  *
  * @author ADS
  */
-class Application {
+class Controller_Application extends Controller_Template {
     //put your code here
 }
