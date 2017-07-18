@@ -147,6 +147,7 @@ Kohana::modules(array(
  */
 Route::set('default', '(<controller>(/<action>(/<id>)))')
     ->defaults(array(
+        'directory'  => 'Crm',
         'controller' => 'Login',
         'action'     => 'index',
     ));
@@ -154,16 +155,27 @@ Route::set('default', '(<controller>(/<action>(/<id>)))')
 /**** 
  * Route Persons: Module Persons 
  * ****/
-Route::set('persons/dashboard', '<controller>(/<action>(/<id>))')
+Route::set('login/login', '(<controller>(/<action>(/<id>)))')
     ->defaults(array(
-        'directory' => 'Controller',
+        'directory'  => 'Crm',
+        'controller' => 'Login',
+        'action'     => 'login',
+    ));
+
+
+/**** 
+ * Route Persons: Module Persons 
+ * ****/
+Route::set('persons/dashboard', '(<controller>(/<action>(/<id>)))')
+    ->defaults(array(
+        'directory'  => 'Crm',
         'controller' => 'Persons',
         'action'     => 'dashboard',
     ));
 
-Route::set('persons', '<controller>(/<action>(/<id>))')
+Route::set('persons', '(<controller>(/<action>(/<id>)))')
     ->defaults(array(
-        'directory' => 'Controller',
+        'directory'  => 'Crm',
         'controller' => 'Persons',
         'action'     => 'edit|new',
     ));

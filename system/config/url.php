@@ -3,6 +3,7 @@
 return array(
 
 	'trusted_hosts' => array(
+            '.*\.veterinariaauris\.pe',
 		// Set up your hostnames here
 		//
 		// Example:
