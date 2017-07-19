@@ -4,8 +4,29 @@
             <div class="panel-heading panel-heading-divider">Registro de personas
                 <span class="panel-subtitle">Esta interfaz permite registar, una persona en el sistema.</span>
             </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <form method="POST" action="<?php echo URL::base(); ?>ajax/uploadfile" id="formUploadFile" name="formUploadFile" >                          
+                                <div class="form-group row">
+                                    <label class="col-3 col-form-label text-right">Cargar archivo de personas:</label>
+                                    <div class="col-6">
+                                        <input type="file" name="filePersons" id="filePersons" data-mulile-1tiple-caption="{count} files selected" multiple class="inputfile">
+                                        <label for="filePersons" class="btn btn-primary"> <i class="icon s7-upload"></i><span>Archivo ...</span></label>
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="submit" name="uploadFile" id="uploadFile" value="Cargar" class="btn btn-primary">
+                                    </div>                                    
+                                </div>
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="panel-body">
-                <form>
+                <form name="formPersons" id="formPersons" action="">
                     <!-- nombre -->
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label text-right">Nombres</label>

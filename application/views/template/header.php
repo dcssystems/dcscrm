@@ -4,8 +4,15 @@
     <ul class="nav navbar-nav mai-top-nav">
         <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
         <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-        <li class="nav-item dropdown"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">Services <span class="angle-down s7-angle-down"></span></a>
-            <div role="menu" class="dropdown-menu"><a href="#" class="dropdown-item">Information</a><a href="#" class="dropdown-item">Company</a><a href="#" class="dropdown-item">Documentation</a><a href="#" class="dropdown-item">API Settings</a><a href="#" class="dropdown-item">Export Info</a></div>
+        <li class="nav-item dropdown">
+            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">Services <span class="angle-down s7-angle-down"></span></a>
+            <div role="menu" class="dropdown-menu">
+                <a href="#" class="dropdown-item">Information</a>
+                <a href="#" class="dropdown-item">Company</a>
+                <a href="#" class="dropdown-item">Documentation</a>
+                <a href="#" class="dropdown-item">API Settings</a>
+                <a href="#" class="dropdown-item">Export Info</a>
+            </div>
         </li>
         <li class="nav-item"><a href="#" class="nav-link">Support</a></li>
     </ul>
@@ -37,7 +44,10 @@
                 </li>
             </ul>
         </li>
-        <li class="dropdown nav-item mai-notifications"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span class="icon s7-bell"></span><span class="indicator"></span></a>
+        <li class="dropdown nav-item mai-notifications">
+            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                <span class="icon s7-bell"></span><span class="indicator"></span>
+            </a>
             <ul class="dropdown-menu">
                 <li>
                   <div class="title">Notifications</div>
@@ -111,8 +121,8 @@
     <ul class="nav navbar-nav float-lg-right mai-user-nav">
         <li class="dropdown nav-item">
             <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle nav-link">
-                <img src="<?php echo URL::base();?>assets/img/avatars/img2.jpg"/>
-                <span class="user-name">Violeta Parra</span>
+                <img src="<?php echo URL::base();?>assets/img/generic-avatar.jpg"/>
+                <span class="user-name"><?php echo $nameUser;?></span>
                 <span class="angle-down s7-angle-down"></span>
             </a>
             <div role="menu" class="dropdown-menu">

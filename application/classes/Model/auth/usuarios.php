@@ -22,8 +22,10 @@ class Model_Auth_Usuarios extends ORM {
     protected $_table_columns = array(
         'idUsuario'      => NULL,
         'idPerfil'       => NULL,
+        'intCliente'     => NULL,
         'varUsuario'     => NULL,
         'varPass'        => NULL,
+        'varNomb'        => NULL,
         'varPhonelogin'  => NULL,
         'varPhonepass'   => NULL,
         'intEstado'      => NULL,

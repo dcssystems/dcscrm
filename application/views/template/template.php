@@ -43,6 +43,11 @@
         <script src="<?php echo URL::base(); ?>assets/js/app-tables-datatables.js" type="text/javascript"></script>
       <?php }elseif($value == 2){ ?>
         <script src="<?php echo URL::base();?>assets/lib/parsley/parsley.min.js" type="text/javascript"></script>
+        <script src="<?php echo URL::base(); ?>assets/lib/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+        <script src="<?php echo URL::base(); ?>assets/lib/select2/js/select2.min.js" type="text/javascript"></script>
+        <script src="<?php echo URL::base(); ?>assets/lib/select2/js/select2.full.min.js" type="text/javascript"></script>
+        <script src="<?php echo URL::base(); ?>assets/lib/bootstrap-slider/bootstrap-slider.min.js" type="text/javascript"></script>
+        <script src="<?php echo URL::base(); ?>assets/js/app-form-elements.js" type="text/javascript"></script>
       <?php } ?>
     
     <script type="text/javascript">
@@ -52,6 +57,7 @@
         <?php if($value == 1){?>
         App.dataTables();
         <?php }elseif($value == 2){?>
+        App.formElements();
         $('form').parsley();
         $('#department').change(function(){
             var department = $(this).select().val();

@@ -18,7 +18,7 @@ class Controller_Crm_Application extends Controller_Template {
     public $template = 'template/template';
 
     public function before() 
-    {
+    {       
         parent::before();
         View::set_global('site', ' .::Dircon Solutions::. ');
         $this->template->header = '';
@@ -45,16 +45,14 @@ class Controller_Crm_Application extends Controller_Template {
         || (is_array($this->assert_auth_actions) && array_key_exists($action_name, $this->assert_auth_actions)
         && Auth::instance()->logged_in($this->assert_auth_actions[$action_name]) === FALSE)) 
         {
-                if (Auth::instance()->logged_in()) 
-                {
-                        Request::instance()
-                                ->redirect('admin/auth/noaccess');
-                } 
-                else 
-                {
-                        Request::instance()
-                                ->redirect('login');
-                }
+            if (Auth::instance()->logged_in()) 
+            {
+                Request::instance()->redirect('admin/auth/noaccess');
+            } 
+            else 
+            {
+                Request::instance()->redirect('login');
+            }
         }
     }
 }

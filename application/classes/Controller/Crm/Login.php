@@ -12,20 +12,21 @@
  * @author ADS
  */
 class Controller_Crm_Login extends Controller_Crm_Backend{
-    //put your code here
+    //put your code here   
     public function action_index() {       
         $this->template->content = View::factory('login/login');        
     }
     
     public function action_login() {
         $user = $this->request->post('username');
-        $pass = $this->request->post('password');
+        $pass = $this->request->post('password');        
         $response = $this->_getValidation($user, $pass);
         $error = '';
         if($response == TRUE){
             $this->redirect('http://localhost/dcscrm/persons/dashboard');
         }else{
-            $error = TRUE;           
+            $this->template->error = TRUE; 
+            $error = $this->template->error;
         }
         $login = View::factory('login/login')->set('error', $error);
         $this->template->content = $login;        
@@ -39,7 +40,9 @@ class Controller_Crm_Login extends Controller_Crm_Backend{
         $response = FALSE;
         //$perfs = ORM::factory('Auth_Perfiles');
         if($usuario == $user && $password == $pass && !empty($user) && !empty($pass)){
-            Session::instance()->set('perfil', $users->idPerfil);
+            Session::instance()
+                ->set('perfil', $users->idPerfil)
+                ->set('nameUser', $users->varNomb);
             $response = TRUE;
         }else{
             $response = FALSE;
@@ -49,6 +52,6 @@ class Controller_Crm_Login extends Controller_Crm_Backend{
     
     public function action_logout() {
         Session::instance()->destroy();
-        $this->redirect('http://localhost/dcscrm/login/login');
+        $this->redirect('http://localhost/dcscrm/');
     }
 }

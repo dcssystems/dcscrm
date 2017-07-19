@@ -21,6 +21,7 @@ class Controller_Crm_Backend extends Controller_Template {
     {
         parent::before();
         View::set_global('site', ' .::Dircon Solutions::. ');
+        $this->template->error = FALSE;
         $this->template->styles = array(
             '<link rel="stylesheet" type="text/css" href="' . URL::base() . 'assets/lib/stroke-7/style.css"/>',
             '<link rel="stylesheet" type="text/css" href="' . URL::base() . 'assets/lib/perfect-scrollbar/css/perfect-scrollbar.min.css"/>',

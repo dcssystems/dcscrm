@@ -26,7 +26,7 @@ class Controller_Crm_Ajax extends Controller {
     
     public function action_district() {
         $idProv   = $this->request->post('id');
-        $idDpto   = $this->request->post('dpto');
+        //$idDpto   = $this->request->post('dpto');
         $district = ORM::factory('Ubigeo_Ubigeo')
                 ->where('idProv', '=', $idProv)
                 ->where('varDescripcion', '!=', '')
@@ -34,5 +34,9 @@ class Controller_Crm_Ajax extends Controller {
                 ->order_by('varDistrito')
                 ->find_all();
         echo View::factory('ajax/district')->set('district', $district);
+    }
+    
+    public function action_uploadFile() {
+        
     }
 }

@@ -14,40 +14,58 @@
 class Controller_Crm_Persons extends Controller_Crm_Application{
     //put your code here
     
+       
     public function action_dashboard() {
-        $dashboard = 'A';
-        $this->template->header = View::factory('template/header');
-        $this->template->menu   = View::factory('template/menu')
+        if(!empty(Session::instance()->get('nameUser'))){
+            $dashboard = 'A';
+            $this->template->header = View::factory('template/header')
+                ->set('nameUser', Session::instance()->get('nameUser'));
+            $this->template->menu   = View::factory('template/menu')
                 ->set('dashboard', $dashboard);
-        $this->template->value  = 1;
-        $content = View::factory('persons/index');
-        $this->template->content = $content;
+            $this->template->value  = 1;
+            $content = View::factory('persons/index');
+            $this->template->content = $content; 
+        }else{
+            $this->redirect('http://localhost/dcscrm/login/login');
+        }        
     }
     
     
     public function action_edit() {
-        $this->template->header = View::factory('template/header');
-        $this->template->menu   = View::factory('template/menu');
-        $this->template->value  = 2;
-        $department = ORM::factory('Ubigeo_Ubigeo')
+        if(!empty(Session::instance()->get('nameUser'))){
+            $this->template->header = View::factory('template/header')
+                ->set('nameUser', Session::instance()->get('nameUser'));
+            $this->template->menu   = View::factory('template/menu');
+            $this->template->value  = 2;
+            $department = ORM::factory('Ubigeo_Ubigeo')
                 ->group_by('varDpto')
                 ->find_all();
-        $edit = View::factory('persons/edit')
+            $edit = View::factory('persons/edit')
                 ->set('department', $department);
-        $this->template->content = $edit;
+            $this->template->content = $edit;
+        }else{
+            $this->redirect('http://localhost/dcscrm/login/login');
+        }
+        
     }
     
     public function action_new() {
-        $active = 'A';
-        $this->template->header = View::factory('template/header');
-        $this->template->menu   = View::factory('template/menu')
+        if(!empty(Session::instance()->get('nameUser'))){
+            $active = 'A';
+            $this->template->header = View::factory('template/header')
+                ->set('nameUser', Session::instance()->get('nameUser'));
+            $this->template->menu   = View::factory('template/menu')
                 ->set('active', $active);
-        $this->template->value  = 2;
-        $department = ORM::factory('Ubigeo_Ubigeo')
+            $this->template->value  = 2;
+            $department = ORM::factory('Ubigeo_Ubigeo')
                 ->group_by('varDpto')
                 ->find_all();
-        $new = View::factory('persons/edit')
+            $new = View::factory('persons/edit')
                 ->set('department', $department);
-        $this->template->content = $new;
+            $this->template->content = $new;
+        }else{
+            $this->redirect('http://localhost/dcscrm/login/login');
+        }
+        
     }
 }
