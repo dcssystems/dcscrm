@@ -20,12 +20,13 @@ function submitForm(){
     // Initiate Variables With Form Content
     var name = $("#name").val();
     var email = $("#email").val();
+    var telefono = $("#telefono").val();
     var message = $("#message").val();
 
     $.ajax({
         type: "POST",
         url: "assets/contact-form/php/form-action.php",
-        data: "name=" + name + "&email=" + email + "&message=" + message,
+        data: "name=" + name + "&email=" + email + "&message=" + message + "&telefono=" + telefono,
         success : function(text){
             if (text == "success"){
                 formSuccess();
@@ -39,7 +40,8 @@ function submitForm(){
 
 function formSuccess(){
     $("#contactform")[0].reset();
-    submitMSG(true, "Message Submitted!");
+    //submitMSG(true, "Message Submitted!");
+    $("#myModal").modal();
 }
 
 function formError(){

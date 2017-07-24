@@ -2,9 +2,10 @@
 $msg = '';
 //Don't run this unless we're handling a form submission
 if ($_POST) {
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $message = $_POST["message"];
+    $name = utf8_decode($_POST["name"]);
+    $email = utf8_decode($_POST["email"]);
+    $phone = $_POST["telefono"];
+    $message = utf8_decode($_POST["message"]);
     date_default_timezone_set('America/Lima');
 
     require 'PHPMailer/PHPMailerAutoload.php';
@@ -27,16 +28,18 @@ if ($_POST) {
     //This will fail if the address provided is invalid,
     //in which case we should ignore the whole request
     if ($mail->addReplyTo($email, $name)) {
-        $mail->Subject = 'Contáctenos Web www.dirconsolutions.com';
+        $mail->Subject = utf8_decode('Contáctenos Web www.dirconsolutions.com');
         //Keep it simple - don't use HTML
         $mail->isHTML(false);
         //Build a simple message body
-        $mail->Body = <<<EOT
+        $mail->Body = utf8_decode(<<<EOT
                 
-            Nombre: {$name}
+            Nombre: {$_POST["name"]}
             Email: {$email}
-            Mensaje: {$message}
-EOT;
+            Teléfono: {$phone}
+            Mensaje: {$_POST["message"]}
+EOT
+            );
         //Send the message, check for errors
         if (!$mail->send()) {
             //The reason for failing to send will be in $mail->ErrorInfo

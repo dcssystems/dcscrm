@@ -269,7 +269,6 @@
                     <div class="col-md-6 col-xs-6 col-mob">
                         <div class="item">
                             <i class="icon-phone"></i>
-                            <i class="icon-bubbles3"></i>
                             <h3>Call Center</h3>
                             <p class="text-justify">Cobranzas Administrativa Temprana Tardía Judicial </p>
                         </div>
@@ -482,7 +481,7 @@
                 </div>
                 <div class="col-sm-8">
                     <form id="contactform" data-toggle="validator" class="shake scroll-reveal">
-                        <div class="form-group col-sm-6">
+                        <div class="form-group col-sm-12">
                             <input type="text" class="form-control" id="name" placeholder="Nombres" required>
                             <div class="help-block with-errors"></div>
                         </div>
@@ -490,6 +489,9 @@
                             <input type="email" class="form-control" id="email" placeholder="Email" required>
                             <div class="help-block with-errors"></div>
                         </div>
+                        <div class="form-group col-sm-6">
+                            <input type="text" class="form-control" id="telefono" placeholder="Teléfono">
+                        </div>                        
                         <div class="form-group col-sm-12">
                             <textarea id="message" class="form-control" rows="6" placeholder="Consulta" required></textarea>
                             <div class="help-block with-errors"></div>
@@ -499,6 +501,24 @@
                         </div>
                         <div id="msgSubmit"></div>
                     </form>
+                    <!-- Modal -->
+                    <div id="myModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Contáctenos Web</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>En breve responderemos a su solicitud. Agradecemos su confianza.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
