@@ -306,7 +306,7 @@ jQuery(document).ready(function () {
 
 	// 04.3 Portfolio Filterizr
 	//================================================================================
-    var workfilter = $('.work-masonry');
+    /*var workfilter = $('.work-masonry');
 	workfilter.filterizr({
 	  layout: 'packed'
 	});
@@ -314,7 +314,7 @@ jQuery(document).ready(function () {
     $('.filters-group li .filter').on('click', function() {
       $('.filters-group li .filter').removeClass('is-checked');
       $(this).addClass('is-checked');
-    });
+    });*/
 
 });
 			
