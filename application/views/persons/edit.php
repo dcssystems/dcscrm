@@ -8,7 +8,7 @@
                 <div class="col-md-12">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <form id="formUploadFile" method="POST" name="formUploadFile" enctype="multipart/form-data">  <!-- method="POST" action="<?php //echo URL::base(); ?>ajax/uploadfile"-->                        
+                            <form id="formUploadFile" method="GET" name="formUploadFile" enctype="multipart/form-data">  <!-- method="POST" action="<?php //echo URL::base(); ?>ajax/uploadfile"-->                        
                                 <div class="form-group row">
                                     <label class="col-3 col-form-label text-right">Cargar archivo de personas:</label>
                                     <div class="col-6">
@@ -18,8 +18,7 @@
                                     <div class="col-3">
                                         <button type="button" name="uploadFile" id="uploadFile" class="btn btn-primary">Cargar</button>
                                     </div>                                    
-                                </div>
-                                
+                                </div>                                
                             </form>
                         </div>
                     </div>
