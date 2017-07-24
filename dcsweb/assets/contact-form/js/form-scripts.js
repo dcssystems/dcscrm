@@ -39,7 +39,7 @@ function submitForm(){
 
 function formSuccess(){
     $("#contactform")[0].reset();
-    submitMSG(true, "Message Submitted!")
+    submitMSG(true, "Message Submitted!");
 }
 
 function formError(){
