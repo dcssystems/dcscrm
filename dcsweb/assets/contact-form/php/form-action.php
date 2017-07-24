@@ -7,17 +7,17 @@
  */
 if(!empty($_REQUEST["data"])){
     $name    = $_REQUEST["data"]["name"];
-    $email   = $_REQUEST["data"]["email"];
+    $from   = $_REQUEST["data"]["email"];
     $message = $_REQUEST["data"]["message"];
     // Always set content-type when sending HTML email
     $headers = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-    $to = "informes@dirconsolutions.com";
+    $to = "informes@dirconsolutions.com, ljruizperalta@gmail.com";
     $subject = "Formulario de contactenos";
     $body = "Informacion del contacto: <br/> Nombre:". $name ." "
-            . "<br/>Email: ". $email ."<br/> "
+            . "<br/>Email: ". $from ."<br/> "
             . "Consulta: ". $message."<br/>";
-    if (mail($to, $subject, $body, $header)) {
+    if (mail($to, $subject, $body, $from, $header)) {
         echo "success";
     } else {
         echo("<p>Email delivery failed…</p>");
