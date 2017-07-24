@@ -18,7 +18,7 @@ if(!empty($_REQUEST["data"])){
             . "<br/>Email: ". $email ."<br/> "
             . "Consulta: ". $message."<br/>";
     if (mail($to, $subject, $body, $header)) {
-        echo("success");
+        echo "success";
     } else {
         echo("<p>Email delivery failed…</p>");
     }
