@@ -1,0 +1,69 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 21/07/2017, 02:11:56 PM
+    Author     : ADS
+*/
+
+.logo, header.is-active .logo, .pricing .choose, .promo .btn, .footer .back-top, header.is-active .social-top a:hover {
+    background: #ea9001;
+    color: #fff;
+}
+header.is-active .social-top a:hover{
+	border-color: #ea9001;
+}
+ 
+header.is-active .site-menu li.active a, .services .item h3, .services .item i, .testmonials h5 {
+    color: #ea9001;
+}
+
+ul.work-nav li button.is-checked {
+    color: #ea9001;
+    border-bottom: 2px solid #ea9001;
+}
+
+.single-team .content {
+  color: #fff;
+}
+
+.single-team .content a {
+  color: #fff;
+  border-color: #fff;
+}
+
+
+.status, .pricing .item-top, .contact-us, .skillbar-bar {
+	background: #c37700;
+}
+
+.filtr-item .project-detail, .single-team figure .overlay {
+	background: rgba(245, 58, 83, 0.73);
+}
+
+.pricing .item-top h4 {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.contact-us input, .contact-us textarea {
+	border: 1px solid rgba(255, 255, 255, 0.59);
+}
+
+.contact-us li {
+  color: #eaeaea;
+}
+
+.contact-us ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #fff;
+}
+.contact-us ::-moz-placeholder { /* Firefox 19+ */
+  color: #fff;
+}
+.contact-us :-ms-input-placeholder { /* IE 10+ */
+  color: #fff;
+}
+.contact-us :-moz-placeholder { /* Firefox 18- */
+  color: #fff;
+}
