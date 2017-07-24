@@ -8,15 +8,16 @@
                 <div class="col-md-12">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <form id="formUploadFile" method="GET" name="formUploadFile" enctype="multipart/form-data">  <!-- method="POST" action="<?php //echo URL::base(); ?>ajax/uploadfile"-->                        
+                            <form id="formUploadFile" method="POST" action="http://localhost/dcscrm/ajax/uploadfile" name="formUploadFile" enctype="multipart/form-data">  <!-- method="POST" action="<?php //echo URL::base(); ?>ajax/uploadfile"-->                        
                                 <div class="form-group row">
                                     <label class="col-3 col-form-label text-right">Cargar archivo de personas:</label>
                                     <div class="col-6">
                                         <input type="file" name="filePersons" id="filePersons" class="inputfile">
                                         <label for="filePersons" class="btn btn-primary"> <i class="icon s7-upload"></i><span>Archivo ...</span></label>
+                                        <input type="hidden" name="MAX_FILE_SIZE" value="3000000" />
                                     </div>
                                     <div class="col-3">
-                                        <button type="button" name="uploadFile" id="uploadFile" class="btn btn-primary">Cargar</button>
+                                        <button type="submit" name="uploadFile" id="uploadFile" class="btn btn-primary">Cargar</button>
                                     </div>                                    
                                 </div>                                
                             </form>

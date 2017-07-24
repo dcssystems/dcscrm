@@ -4268,7 +4268,9 @@ button.close {
 
 .modal-title {
   margin-bottom: 0;
-  line-height: 1.538; }
+  line-height: 1.538;
+  color: #e9592c;
+}
 
 .modal-body {
   position: relative;

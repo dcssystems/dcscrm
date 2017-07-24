@@ -37,7 +37,27 @@ class Controller_Crm_Ajax extends Controller {
     }
     
     public function action_uploadFile() {
-        $files = $this->request->post('file');
-        echo var_dump($_FILES[$files]['name']);
+        ini_set('post_max_size', '64M');
+        ini_set('upload_max_filesize', '64M');
+        //$files = $this->request->post('filePersons');
+        $ds          = DIRECTORY_SEPARATOR; 
+        $storeFolder = 'uploads';
+        $enable_upload = true;   
+
+        if ( !empty($_FILES) && $enable_upload ) {
+
+            $tempFile = $_FILES['filePersons']['tmp_name'];                 
+
+            $targetPath = dirname(dirname(dirname(dirname(dirname( __FILE__ ))))) . $ds. $storeFolder . $ds; 
+            
+            //$targetPath = str_replace('\\', '/', $targetPath);
+
+            $targetFile =  $targetPath. $_FILES['filePersons']['name']; 
+
+            //move_uploaded_file($tempFile,$targetFile);
+
+        }
+        echo var_dump($_FILES);
+        echo var_dump($targetPath);
     }
 }
