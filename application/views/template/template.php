@@ -75,6 +75,11 @@
                 $('#district').html(data);
             });
         });
+        $("#uploadFile").click(function(){
+            var files = $("#formUploadFile").serialize();
+            //console.log(files);
+            $.post('http://localhost/dcscrm/ajax/uploadfile', {file:files});
+        });
         <?php } ?>
       });
     </script>

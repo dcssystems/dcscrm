@@ -8,15 +8,15 @@
                 <div class="col-md-12">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <form method="POST" action="<?php echo URL::base(); ?>ajax/uploadfile" id="formUploadFile" name="formUploadFile" >                          
+                            <form id="formUploadFile" method="POST" name="formUploadFile" enctype="multipart/form-data">  <!-- method="POST" action="<?php //echo URL::base(); ?>ajax/uploadfile"-->                        
                                 <div class="form-group row">
                                     <label class="col-3 col-form-label text-right">Cargar archivo de personas:</label>
                                     <div class="col-6">
-                                        <input type="file" name="filePersons" id="filePersons" data-mulile-1tiple-caption="{count} files selected" multiple class="inputfile">
+                                        <input type="file" name="filePersons" id="filePersons" class="inputfile">
                                         <label for="filePersons" class="btn btn-primary"> <i class="icon s7-upload"></i><span>Archivo ...</span></label>
                                     </div>
                                     <div class="col-3">
-                                        <input type="submit" name="uploadFile" id="uploadFile" value="Cargar" class="btn btn-primary">
+                                        <button type="button" name="uploadFile" id="uploadFile" class="btn btn-primary">Cargar</button>
                                     </div>                                    
                                 </div>
                                 

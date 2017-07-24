@@ -37,6 +37,7 @@ class Controller_Crm_Ajax extends Controller {
     }
     
     public function action_uploadFile() {
-        
+        $files = $this->request->post('file');
+        echo var_dump($_FILES[$files]['name']);
     }
 }
