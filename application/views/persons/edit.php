@@ -8,7 +8,7 @@
                 <div class="col-md-12">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <form id="formUploadFile" method="POST" action="http://localhost/dcscrm/ajax/uploadfile" name="formUploadFile" enctype="multipart/form-data">  <!-- method="POST" action="<?php //echo URL::base(); ?>ajax/uploadfile"-->                        
+                            <form id="formUploadFile" method="POST" name="formUploadFile" enctype="multipart/form-data">  <!-- method="POST" action="<?php //echo URL::base(); ?>ajax/uploadfile"-->                        
                                 <div class="form-group row">
                                     <label class="col-3 col-form-label text-right">Cargar archivo de personas:</label>
                                     <div class="col-6">
@@ -17,7 +17,7 @@
                                         <input type="hidden" name="MAX_FILE_SIZE" value="3000000" />
                                     </div>
                                     <div class="col-3">
-                                        <button type="submit" name="uploadFile" id="uploadFile" class="btn btn-primary">Cargar</button>
+                                        <button type="button" name="uploadFile" id="uploadFile" class="btn btn-primary">Cargar</button>
                                     </div>                                    
                                 </div>                                
                             </form>
@@ -117,6 +117,66 @@
                         </div>
                     </div>
                 </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal Okey-->
+<div id="mod-primary" tabindex="-1" role="dialog" style="" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" data-dismiss="modal" aria-hidden="true" class="close"><span class="s7-close"></span></button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center">
+                    <div class="text-primary"><span class="modal-main-icon s7-check"></span></div>
+                    <h3 class="mb-4">Correcto!</h3>
+                    <p id="msgOkey"></p>
+                    <div class="mt-6">
+                        <button type="button" data-dismiss="modal" class="btn btn-sm btn-space btn-secondary">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Modal Danger-->
+<div id="mod-danger" tabindex="-1" role="dialog" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" data-dismiss="modal" aria-hidden="true" class="close"><span class="s7-close"></span></button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center">
+                    <div class="text-danger"><span class="modal-main-icon s7-close-circle"></span></div>
+                    <h3 class="mb-4">Error!</h3>
+                    <p id="msgError"></p>
+                    <div class="mt-6">
+                        <button type="button" data-dismiss="modal" class="btn btn-sm btn-space btn-secondary">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- loanding -->
+<div id="mod-info" tabindex="-1" role="dialog" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" data-dismiss="modal" aria-hidden="true" class="close"><span class="s7-close"></span></button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center">
+                    <div class="text-info"><span class="modal-main-icon s7-info"></span></div>
+                    <h3 class="mb-4">Información!</h3>
+                    <p>Espere hasta poder terminar con la carga de su archivo.</p>
+                    <div class="mt-6">
+                    </div>
+                </div>
             </div>
         </div>
     </div>

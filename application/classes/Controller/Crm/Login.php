@@ -42,7 +42,8 @@ class Controller_Crm_Login extends Controller_Crm_Backend{
         if($usuario == $user && $password == $pass && !empty($user) && !empty($pass)){
             Session::instance()
                 ->set('perfil', $users->idPerfil)
-                ->set('nameUser', $users->varNomb);
+                ->set('nameUser', $users->varNomb)
+                ->set('cliente', $users->idCliente);
             $response = TRUE;
         }else{
             $response = FALSE;

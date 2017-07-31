@@ -179,3 +179,53 @@ Route::set('persons', '(<controller>(/<action>(/<id>)))')
         'controller' => 'Persons',
         'action'     => 'edit|new',
     ));
+
+/****
+ * 
+ * Route Ajax
+ * 
+ */
+Route::set('uploadfile', '(<controller>(/<action>(/<id>)))')
+    ->defaults(array(
+        'directory'  => 'Crm',
+        'controller' => 'Ajax',
+        'action'     => 'uploadfile',
+    ));
+
+Route::set('newcampaign', '(<controller>(/<action>(/<id>)))')
+    ->defaults(array(
+        'directory'  => 'Crm',
+        'controller' => 'Ajax',
+        'action'     => 'newcampaign',
+    ));
+
+/***
+ * 
+ * Route Campaigns
+ * 
+ */
+Route::set('campaigns/dashboard', 'crm(/<controller>(/<action>(/<id>)))')
+    ->defaults(array(
+        'directory'  => 'Crm',
+        'controller' => 'Campaigns',
+        'action'     => 'dashboard',
+    ));
+
+Route::set('campaigns', '(<controller>(/<action>(/<id>)))')
+    ->defaults(array(
+        'directory'  => 'Crm',
+        'controller' => 'Campaigns',
+        'action'     => 'list|new|edit',
+    ));
+
+/**
+ * 
+ * Route User Session Model, View and Controller 
+ * 
+ */
+Route::set('users/operator','(<controller>(/<action>(/<id>)))')
+    ->defaults(array(
+        'directory'  => 'Crm',
+        'controller' => 'User',
+        'action'     => 'dashboard',
+    ));

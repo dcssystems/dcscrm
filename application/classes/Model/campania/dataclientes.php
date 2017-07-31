@@ -1,4 +1,4 @@
-<?php
+<?php defined('SYSPATH') or die('No direct script access.');
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -71,8 +71,8 @@ class Model_Campania_Dataclientes extends ORM {
         'varExtension5'         => NULL,
         'varEmail'              => NULL,
         'varProvision'          => NULL,
-        'datFechadegeneracion'  => NULL,
-        'datFechadeingreso'     => NULL,
+        'varFechadegeneracion'  => NULL,
+        'varFechadeingreso'     => NULL,
         'varOficina'            => NULL,
         'varProducto'           => NULL,
         'varMarca'              => NULL,

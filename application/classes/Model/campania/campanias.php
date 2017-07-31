@@ -11,7 +11,7 @@
  *
  * @author ADS
  */
-class Model_Campania_Ccampanias extends ORM {
+class Model_Campania_Campanias extends ORM {
     //put your code here
     protected $_table_name = 'campanias';
     

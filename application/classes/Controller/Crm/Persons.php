@@ -13,15 +13,18 @@
  */
 class Controller_Crm_Persons extends Controller_Crm_Application{
     //put your code here
-    
-       
+    private $activeMenu = 1;
+
+
     public function action_dashboard() {
         if(!empty(Session::instance()->get('nameUser'))){
             $dashboard = 'A';
+            $actvPer = $this->activeMenu;
             $this->template->header = View::factory('template/header')
                 ->set('nameUser', Session::instance()->get('nameUser'));
             $this->template->menu   = View::factory('template/menu')
-                ->set('dashboard', $dashboard);
+                ->set('dashboard', $dashboard)
+                ->set('actvPer', $actvPer);
             $this->template->value  = 1;
             $content = View::factory('persons/index');
             $this->template->content = $content; 
@@ -32,10 +35,12 @@ class Controller_Crm_Persons extends Controller_Crm_Application{
     
     
     public function action_edit() {
+        $actvPer = $this->activeMenu;
         if(!empty(Session::instance()->get('nameUser'))){
             $this->template->header = View::factory('template/header')
                 ->set('nameUser', Session::instance()->get('nameUser'));
-            $this->template->menu   = View::factory('template/menu');
+            $this->template->menu   = View::factory('template/menu')
+                ->set('actvPer', $actvPer);
             $this->template->value  = 2;
             $department = ORM::factory('Ubigeo_Ubigeo')
                 ->group_by('varDpto')
@@ -50,12 +55,14 @@ class Controller_Crm_Persons extends Controller_Crm_Application{
     }
     
     public function action_new() {
+        $actvPer = $this->activeMenu;
         if(!empty(Session::instance()->get('nameUser'))){
             $active = 'A';
             $this->template->header = View::factory('template/header')
                 ->set('nameUser', Session::instance()->get('nameUser'));
             $this->template->menu   = View::factory('template/menu')
-                ->set('active', $active);
+                ->set('active', $active)
+                ->set('actvPer', $actvPer);
             $this->template->value  = 2;
             $department = ORM::factory('Ubigeo_Ubigeo')
                 ->group_by('varDpto')
