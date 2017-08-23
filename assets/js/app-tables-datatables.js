@@ -13,14 +13,14 @@ var App = (function () {
 
     $.extend( $.fn.dataTable.ext.classes, {
       sFilterInput:  "form-control form-control-sm",
-      sLengthSelect: "form-control form-control-sm",
+      sLengthSelect: "form-control form-control-sm"
     } );
 
     $("#table1").dataTable();
 
     //Remove search & paging dropdown
     $("#table2").dataTable({
-      pageLength: 6,
+      pageLength: 50,
       dom:  "<'row mai-datatable-body'<'col-sm-12'tr>>" +
             "<'row mai-datatable-footer'<'col-sm-5'i><'col-sm-7'p>>"
     });
@@ -33,11 +33,18 @@ var App = (function () {
         {extend: 'pdf', className: 'btn-secondary'},
         {extend: 'print', className: 'btn-secondary'}
       ],
-      "lengthMenu": [[6, 10, 25, 50, -1], [6, 10, 25, 50, "All"]],
+      "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
       dom:  "<'row mai-datatable-header'<'col-sm-6'l><'col-sm-6 text-right'B>>" +
             "<'row mai-datatable-body'<'col-sm-12'tr>>" +
             "<'row mai-datatable-footer'<'col-sm-5'i><'col-sm-7'p>>"
     });
+    
+    
+    //datepicker
+    $("#date-be").datepicker();
+    
+    $("#date-end").datepicker();
+    
 
   };
 

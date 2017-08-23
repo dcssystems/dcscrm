@@ -35,6 +35,8 @@ var App = (function () {
 
     //Bootstrap Slider
     $('.bslider').bootstrapSlider();
+    
+    
   };
 
   return App;

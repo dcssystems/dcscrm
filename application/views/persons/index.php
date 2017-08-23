@@ -477,21 +477,172 @@
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                                <div class="text-primary"><span class="modal-main-icon s7-check"></span></div>
-                                <h3 class="mb-4">Correcto!</h3>
-                                <p id="msgOkey"></p>
-                                <div class="mt-6">
-                                    <button type="button" data-dismiss="modal" class="btn btn-sm btn-space btn-secondary">Cerrar</button>
+                                <div class="form-group row">
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="input-group date" data-provide="datepicker">
+                                                    <input name="date-be" id="date-be" type="text" class="form-control" placeholder="Fecha inicial">
+                                                    <div class="input-group-addon">
+                                                        <span class="s7-date"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="input-group date" data-provide="datepicker">
+                                                    <input name="date-end" id="date-end" type="text" required placeholder="Fecha de fin" class="form-control">
+                                                    <div class="input-group-addon">
+                                                        <span class="s7-date"></span>
+                                                    </div>
+                                                </div>                                                
+                                            </div>                                            
+                                        </div>                                                                                
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-12">
+                                        <select name="customer" id="customer" class="form-control">
+                                            <option value="" selected>Seleccione tipo de campaña</option>
+                                            <option value="1">Saliente</option>
+                                            <option value="2">Blaiser</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label text-right">Estado: </label>
+                                    <div class="col-sm-6 form-check mt-2">
+                                        <label class="custom-control custom-radio">
+                                            <input name="radiostate" value="1" type="radio" name="radio-inline" checked class="custom-control-input">
+                                            <span class="custom-control-indicator"></span>
+                                            <span class="custom-control-description">Activo</span>
+                                        </label>
+                                        <label class="custom-control custom-radio">
+                                            <input name="radiostate" value="0" type="radio" name="radio-inline" class="custom-control-input">
+                                            <span class="custom-control-indicator"></span>
+                                            <span class="custom-control-description">Inactivo</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-12">
+                                        <button class="btn btn-space btn-primary col-sm-12" type="submit" id="btnFormCampaign">CREAR CAMPAÑA</button>                                        
+                                    </div>                                    
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-12">
-                                <div class="text-primary"><span class="modal-main-icon s7-check"></span></div>
-                                <h3 class="mb-4">Correcto!</h3>
-                                <p id="msgOkey"></p>
-                                <div class="mt-6">
-                                    <button type="button" data-dismiss="modal" class="btn btn-sm btn-space btn-secondary">Cerrar</button>
+                                <!--Responsive table-->
+                                <div class="panel panel-default panel-table">
+                                    <div class="panel-heading">Seleccione operadores: </div>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="table-responsive noSwipe">
+                                            <table class="table table-striped table-hover">
+                                                <thead>
+                                                    <tr>
+                                                      <th style="width:5%;">
+                                                        <label class="custom-control custom-control-sm custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input"><span class="custom-control-indicator"></span>
+                                                        </label>
+                                                      </th>
+                                                      <th style="width:30%;">Operador</th>
+                                                      <th style="width:20%;">Grado</th>
+                                                      <th style="width:15%;">Fecha ingreso</th>
+                                                      <th style="width:15%;">Branch</th>
+                                                      <th style="width:15%;">Branch</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                      <td>
+                                                        <label class="custom-control custom-control-sm custom-checkbox">
+                                                          <input type="checkbox" class="custom-control-input"><span class="custom-control-indicator"></span>
+                                                        </label>
+                                                      </td>
+                                                      <td class="user-avatar cell-detail user-info"><img src="<?php echo URL::base(); ?>assets/img/avatar.jpg" alt="Avatar"><span>John Peterson</span><span class="cell-detail-description">Developer</span></td>
+                                                      <td class="cell-detail"> <span>Semi-Senior</span><span class="cell-detail-description">Bootstrap Admin</span></td>
+                                                      <td class="milestone"><span class="completed">8 / 15</span><span class="version">v1.2.0</span>
+                                                        <div class="progress">
+                                                          <div style="width: 45%" class="progress-bar progress-bar-primary"></div>
+                                                        </div>
+                                                      </td>
+                                                      <td class="cell-detail"><span>master</span><span class="cell-detail-description">63e8ec3</span></td>
+                                                      <td class="cell-detail"><span>May 6, 2016</span><span class="cell-detail-description">8:30</span></td>
+                                                     
+                                                    </tr>
+                                                    <tr class="online">
+                                                      <td>
+                                                        <label class="custom-control custom-control-sm custom-checkbox">
+                                                          <input type="checkbox" class="custom-control-input"><span class="custom-control-indicator"></span>
+                                                        </label>
+                                                      </td>
+                                                      <td class="user-avatar cell-detail user-info"><img src="<?php echo URL::base(); ?>assets/img/avatars/img1.jpg" alt="Avatar"><span>Ryan Lawrence</span><span class="cell-detail-description">Designer</span></td>
+                                                      <td class="cell-detail"> <span>Senior</span><span class="cell-detail-description">CLI Connector</span></td>
+                                                      <td class="milestone"><span class="completed">22 / 30</span><span class="version">v1.1.5</span>
+                                                        <div class="progress">
+                                                          <div style="width: 75%" class="progress-bar progress-bar-primary"></div>
+                                                        </div>
+                                                      </td>
+                                                      <td class="cell-detail"><span>develop</span><span class="cell-detail-description">4cc1bc2</span></td>
+                                                      <td class="cell-detail"><span>April 22, 2016</span><span class="cell-detail-description">14:45</span></td>
+                                                      
+                                                    </tr>
+                                                    <tr>
+                                                      <td>
+                                                        <label class="custom-control custom-control-sm custom-control-sm custom-checkbox">
+                                                          <input type="checkbox" class="custom-control-input"><span class="custom-control-indicator"></span>
+                                                        </label>
+                                                      </td>
+                                                      <td class="user-avatar cell-detail user-info"><img src="<?php echo URL::base(); ?>assets/img/avatars/img2.jpg" alt="Avatar"><span>Benji Miller</span><span class="cell-detail-description">Designer</span></td>
+                                                      <td class="cell-detail"> <span>Junior</span><span class="cell-detail-description">Back-end Manager</span></td>
+                                                      <td class="milestone"><span class="completed">10 / 30</span><span class="version">v1.1.3</span>
+                                                        <div class="progress">
+                                                          <div style="width: 33%" class="progress-bar progress-bar-primary"></div>
+                                                        </div>
+                                                      </td>
+                                                      <td class="cell-detail"><span>develop</span><span class="cell-detail-description">5477993</span></td>
+                                                      <td class="cell-detail"><span>April 15, 2016</span><span class="cell-detail-description">10:00</span></td>
+                                                     
+                                                    </tr>
+                                                    <tr>
+                                                      <td>
+                                                        <label class="custom-control custom-control-sm custom-checkbox">
+                                                          <input type="checkbox" class="custom-control-input"><span class="custom-control-indicator"></span>
+                                                        </label>
+                                                      </td>
+                                                      <td class="user-avatar cell-detail user-info"><img src="<?php echo URL::base(); ?>assets/img/avatars/img3.jpg" alt="Avatar"><span>Justin Adams</span><span class="cell-detail-description">Developer</span></td>
+                                                      <td class="cell-detail"> <span>Semi-Senior</span><span class="cell-detail-description">Bootstrap Admin</span></td>
+                                                      <td class="milestone"><span class="completed">25 / 40</span><span class="version">v1.0.4</span>
+                                                        <div class="progress">
+                                                          <div style="width: 55%" class="progress-bar progress-bar-primary"></div>
+                                                        </div>
+                                                      </td>
+                                                      <td class="cell-detail"><span>master</span><span class="cell-detail-description">8cb98ec</span></td>
+                                                      <td class="cell-detail"><span>April 8, 2016</span><span class="cell-detail-description">17:24</span></td>
+                                                      
+                                                    </tr>
+                                                    <tr class="online">
+                                                      <td>
+                                                        <label class="custom-control custom-control-sm custom-checkbox">
+                                                          <input type="checkbox" class="custom-control-input"><span class="custom-control-indicator"></span>
+                                                        </label>
+                                                      </td>
+                                                      <td class="user-avatar cell-detail user-info"><img src="<?php echo URL::base(); ?>assets/img/avatars/img4.jpg" alt="Avatar"><span>Brett Harris</span><span class="cell-detail-description">Designer</span></td>
+                                                      <td class="cell-detail"> <span>Senior</span><span class="cell-detail-description">CLI Connector</span></td>
+                                                      <td class="milestone"><span class="completed">38 / 40</span><span class="version">v1.0.1</span>
+                                                        <div class="progress">
+                                                          <div style="width: 98%" class="progress-bar progress-bar-primary"></div>
+                                                        </div>
+                                                      </td>
+                                                      <td class="cell-detail"><span>master</span><span class="cell-detail-description">65bc2da</span></td>
+                                                      <td class="cell-detail"><span>Mars 18, 2016</span><span class="cell-detail-description">13:02</span></td>
+                                                      
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div> 

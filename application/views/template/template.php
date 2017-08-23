@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="<?php echo URL::base();?>assets/img/favicon.png">
+    <link rel="shortcut icon" href="<?php echo URL::base();?>assets/img/favicon.ico">
     <title><?php echo $site; ?></title>
     <?php foreach($styles as $style):
         echo $style . "\n"; 
     endforeach; ?>
+    <link href="<?php echo URL::base();?>assets/lib/datapicker/css/datepicker.css" rel="stylesheet" type="text/css"/>
   </head>
   <body>
     <?php echo $header; ?>
@@ -42,6 +43,7 @@
         <script src="<?php echo URL::base(); ?>assets/lib/datatables/plugins/buttons/js/buttons.bootstrap.js" type="text/javascript"></script>
         <script src="<?php echo URL::base(); ?>assets/js/app-tables-datatables.js" type="text/javascript"></script>
         <script src="<?php echo URL::base();?>assets/lib/parsley/parsley.min.js" type="text/javascript"></script>
+        <script src="<?php echo URL::base();?>assets/lib/datapicker/js/bootstrap-datepicker.js" type="text/javascript"></script>
         <script src="<?php echo URL::base(); ?>assets/js/app-form-elements.js" type="text/javascript"></script>
       <?php }elseif($value == 2){ ?>
         <script src="<?php echo URL::base();?>assets/lib/parsley/parsley.min.js" type="text/javascript"></script>
@@ -77,8 +79,9 @@
                 alert(data);
             });
         });
-        $("tr").click(function(){
+        $("#table3>tbody>tr").click(function(){
             var getValue = $(this).data('personcall');
+            console.log(getValue);
             $("#person-call").modal('show');
         });
         <?php }elseif($value == 2){?>
