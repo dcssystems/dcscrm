@@ -157,20 +157,27 @@ class Controller_Crm_Ajax extends Controller {
     public function action_newCampaign() {
         $campaign = $this->request->post('campaign');
         $fecInicio = $this->request->post('fecInicio');
+        $fecIniDB  = Controller_Crm_Helpers::getChangeDateTimeDB($fecInicio);
         $fecFin = $this->request->post('fecFin');
+        $fecFinDB  = Controller_Crm_Helpers::getChangeDateTimeDB($fecFin);
+        $typeCampaign = $this->request->post('typeCampaign');
+        $codeCampaign = $this->request->post('codecampaign');
         $estCampaign = $this->request->post('estCampaign');
         $newCampaign = ORM::factory("Campania_Campanias")->values(
                 array(
                     'idCampania' => '',
                     'idCliente'  => Session::instance()->get('cliente'),
-                    'varCodcampania' => '',
+                    'varTablacliente' => 'datos_bbva',
+                    'idTipocampania' => $typeCampaign,
+                    'varCodcampania' => $codeCampaign,
                     'varNombcampania' => $campaign,
-                    'varFechainicio'  => $fecInicio,
-                    'varFechafinal'  => $fecFin,
-                    'varEstado' => $estCampaign
+                    'datFechainicio'  => $fecIniDB,
+                    'datFechafinal'  => $fecFinDB,
+                    'idEstado' => $estCampaign,
+                    'datReg' => date('Y-m-d H:m:s')
                 )
             )->save();
-        echo Debug::dump($newCampaign);
+        echo "<PRE>"  . Debug::dump($newCampaign) . "</PRE>";
     }
     
     

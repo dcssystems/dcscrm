@@ -36,5 +36,4 @@ class Controller_Crm_Campaigns extends Controller_Crm_Application {
     public function action_list() {
         
     }
-    
 }

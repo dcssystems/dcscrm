@@ -34,7 +34,7 @@ class Controller_Crm_Login extends Controller_Crm_Backend{
     
     public function _getValidation($user, $pass) {
         $users  = ORM::factory('Auth_Usuarios')->where('varUsuario', '=', $user)
-                ->where('varPass', '=', $pass)->find();
+            ->where('varPass', '=', $pass)->find();
         $usuario  = $users->varUsuario;
         $password = $users->varPass;
         $response = FALSE;

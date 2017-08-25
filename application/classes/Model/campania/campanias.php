@@ -22,11 +22,16 @@ class Model_Campania_Campanias extends ORM {
     protected $_table_columns = array(
         'idCampania'        => NULL,
         'idCliente'         => NULL,
+        'varTablacliente'   => NULL,
+        'idTipocampania'   => NULL,
         'varCodcampania'    => NULL,
         'varNombcampania'   => NULL,
-        'varFechainicio'    => NULL,
-        'varFechafinal'     => NULL,
-        'varEstado'         => NULL
+        'datFechainicio'    => NULL,
+        'datFechafinal'     => NULL,
+        'idEstado'          => NULL,
+        'datReg'            => NULL,
+        'datMod'            => NULL,
+        'idUsuario'         => NULL
     ); 
     //idCampania	idCliente	varCodcampania	varNombcampania	varFechainicio	varFechafinal	varEstado
     

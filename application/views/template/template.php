@@ -42,16 +42,18 @@
         <script src="<?php echo URL::base(); ?>assets/lib/datatables/plugins/buttons/js/buttons.colVis.js" type="text/javascript"></script>
         <script src="<?php echo URL::base(); ?>assets/lib/datatables/plugins/buttons/js/buttons.bootstrap.js" type="text/javascript"></script>
         <script src="<?php echo URL::base(); ?>assets/js/app-tables-datatables.js" type="text/javascript"></script>
-        <script src="<?php echo URL::base();?>assets/lib/parsley/parsley.min.js" type="text/javascript"></script>
-        <script src="<?php echo URL::base();?>assets/lib/datapicker/js/bootstrap-datepicker.js" type="text/javascript"></script>
+        <script src="<?php echo URL::base(); ?>assets/lib/parsley/parsley.min.js" type="text/javascript"></script>
+        <script src="<?php echo URL::base(); ?>assets/lib/datapicker/js/bootstrap-datepicker.js" type="text/javascript"></script>
         <script src="<?php echo URL::base(); ?>assets/js/app-form-elements.js" type="text/javascript"></script>
       <?php }elseif($value == 2){ ?>
-        <script src="<?php echo URL::base();?>assets/lib/parsley/parsley.min.js" type="text/javascript"></script>
+        <script src="<?php echo URL::base(); ?>assets/lib/parsley/parsley.min.js" type="text/javascript"></script>
         <script src="<?php echo URL::base(); ?>assets/lib/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
         <script src="<?php echo URL::base(); ?>assets/lib/select2/js/select2.min.js" type="text/javascript"></script>
         <script src="<?php echo URL::base(); ?>assets/lib/select2/js/select2.full.min.js" type="text/javascript"></script>
         <script src="<?php echo URL::base(); ?>assets/lib/bootstrap-slider/bootstrap-slider.min.js" type="text/javascript"></script>
+        <script src="<?php echo URL::base(); ?>assets/lib/datapicker/js/bootstrap-datepicker.js" type="text/javascript"></script>
         <script src="<?php echo URL::base(); ?>assets/js/app-form-elements.js" type="text/javascript"></script>
+        
       <?php }else if($value == 3){ ?>
         <script src="<?php echo URL::base(); ?>assets/lib/jquery-flot/jquery.flot.js" type="text/javascript"></script>
         <script src="<?php echo URL::base(); ?>assets/lib/jquery-flot/jquery.flot.pie.js" type="text/javascript"></script>
@@ -62,6 +64,7 @@
         <script src="<?php echo URL::base(); ?>assets/lib/countdown/jquery.countdown.min.js" type="text/javascript"></script>
         <script src="<?php echo URL::base(); ?>assets/lib/countup/countUp.min.js" type="text/javascript"></script>
         <script src="<?php echo URL::base(); ?>assets/lib/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+        <script src="<?php echo URL::base(); ?>assets/lib/datapicker/js/bootstrap-datepicker.js" type="text/javascript"></script>
         <script src="<?php echo URL::base(); ?>assets/js/app-pages-profile.js" type="text/javascript"></script>
       <?php } ?>
     
@@ -75,7 +78,7 @@
         $("#btnNewCampaign").click(function(){
             var form = $("#formNewCampaign").serialize();
             //alert(form);
-            $.post('http://localhost/dcscrm/ajax/newcampaign', form, function(data){
+            $.post('<?php echo URL::site('ajax/newcampaign');?>', form, function(data){
                 alert(data);
             });
         });
@@ -84,12 +87,14 @@
             console.log(getValue);
             $("#person-call").modal('show');
         });
+        $("#fecInicio").datepicker();
+        
         <?php }elseif($value == 2){?>
         App.formElements();
         $('form').parsley();
         $('#department').change(function(){
             var department = $(this).select().val();
-            $.post('http://localhost/dcscrm/ajax/province', {id:department}, function(data){
+            $.post('<?php echo URL::site('ajax/province');?>', {id:department}, function(data){
                 //console.log(data);
                 $('#province').html(data);
             });
@@ -98,7 +103,7 @@
         $('#province').change(function(){
             var dpto = $('#department').select().val();
             var province = $(this).select().val();
-            $.post('http://localhost/dcscrm/ajax/district', {id:province,dpto:dpto}, function(data){
+            $.post('<?php echo URL::site('ajax/district');?>', {id:province,dpto:dpto}, function(data){
                 console.log(dpto, province);
                 $('#district').html(data);
             });
@@ -109,7 +114,7 @@
             form_data.append('file', file_data);
             $('#mod-info').modal('show');
             $.ajax({
-                url: 'http://localhost/dcscrm/ajax/uploadfile', // point to server-side PHP script 
+                url: '<?php echo URL::site('ajax/uploadfile');?>', // point to server-side PHP script 
                 dataType: 'json', // what to expect back from the PHP script
                 cache: false,
                 contentType: false,

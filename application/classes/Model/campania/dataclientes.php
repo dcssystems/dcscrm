@@ -13,7 +13,7 @@
  */
 class Model_Campania_Dataclientes extends ORM {
     //put your code here
-    protected $_table_name = 'datacliente';
+    protected $_table_name = 'datos_bbva';
     
     protected $_primary_key = 'iddatacliente';
     
@@ -21,7 +21,6 @@ class Model_Campania_Dataclientes extends ORM {
     
     protected $_table_columns = array(
         'iddatacliente'         => NULL,
-        'idCliente'             => NULL,
         'varFproceso'           => NULL,
         'varAgencia'            => NULL,
         'varGestor'             => NULL,

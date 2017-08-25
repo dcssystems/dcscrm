@@ -459,9 +459,27 @@
                                 <div class="panel-body">
                                     <form name="formNewCampaign" id="formNewCampaign" method="POST">
                                         <div class="form-group row">
+                                            <label class="col-3 col-form-label text-right">Código</label>
+                                            <div class="col-9">
+                                                <input type="text" name="codecampaign" id="codecampaign" required class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
                                             <label class="col-3 col-form-label text-right">Campaña</label>
                                             <div class="col-9">
                                                 <input type="text" name="campaign" id="campaign" required class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-3 col-form-label text-right">Tipo </label>
+                                            <div class="col-9">
+                                                <select name="typeCampaign" id="typeCampaign" required class="form-control custom-select">
+                                                    <option value="" selected>Seleccione tipo de campaña</option>
+                                                    <option value="1">Outbound</option>
+                                                    <option value="2">Inbound</option>
+                                                    <option value="3">Blended</option>
+                                                    <option value="4">Survey</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="form-group row">
