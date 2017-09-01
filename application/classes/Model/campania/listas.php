@@ -21,9 +21,13 @@ class Model_Campania_Listas extends ORM {
     
     protected $_table_columns = array(
         'idLista'       => NULL,
-        'idCampaña'     => NULL,
-        'varNomb'       => NULL,
-        'intCantreg'    => NULL
+        'idCampania'    => NULL,
+        'varNombre'     => NULL,
+        'datFechacarga' => NULL,
+        'intCantreg'    => NULL,
+        'datReg'        => NULL,
+        'datMod'        => NULL,
+        'idUsuario'     => NULL        
     ); 
     //idLista	idCampaña	varNomb	intCantreg
 }

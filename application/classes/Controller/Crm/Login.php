@@ -41,6 +41,7 @@ class Controller_Crm_Login extends Controller_Crm_Backend{
         //$perfs = ORM::factory('Auth_Perfiles');
         if($usuario == $user && $password == $pass && !empty($user) && !empty($pass)){
             Session::instance()
+                ->set('idUser', $users->idUsuario)
                 ->set('perfil', $users->idPerfil)
                 ->set('nameUser', $users->varNomb)
                 ->set('cliente', $users->idCliente);

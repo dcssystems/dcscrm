@@ -43,6 +43,18 @@
                     </li>
                 </ul>
             </li>
+            <li class="nav-item parent <?php echo !empty($actvUpload)?'open':''; ?>">
+                <a href="javascript:void();" role="button" aria-expanded="false" class="nav-link">
+                    <span class="icon s7-bell"></span><span>Cargar Datos</span>
+                </a>
+                <ul class="mai-nav-tabs-sub mai-sub-nav nav">
+                    <li class="nav-item">
+                        <a href="<?php echo URL::site('upload/uploadfile');?>" class="nav-link <?php echo !empty($dshUpload)?'active':''; ?>">
+                            <span class="icon s7-box2"></span><span class="name">Archivos</span>
+                        </a>
+                    </li>                   
+                </ul>
+            </li>
         </ul>
     </div>
 </nav>

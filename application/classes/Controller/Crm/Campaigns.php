@@ -26,7 +26,9 @@ class Controller_Crm_Campaigns extends Controller_Crm_Application {
                 ->set('dashbCamp', $dashbCamp)
                 ->set('actvCamp', $actvCamp);
             $this->template->value  = 1;
-            $content = View::factory('campaigns/index');
+            $uploadData= ORM::factory('Campania_Uploades')->where('idCliente', '=', Session::instance()->get('cliente'))->find_all();
+            $content = View::factory('campaigns/index')
+                ->set('uploadData', $uploadData);
             $this->template->content = $content; 
         }else{
             $this->redirect('http://localhost/dcscrm/login/login');
@@ -35,5 +37,20 @@ class Controller_Crm_Campaigns extends Controller_Crm_Application {
     
     public function action_list() {
         
+    }
+    
+    public function action_testProcedure() {
+        $idUser    = Session::instance()->get('idUser');
+        $nameTable = 'datos_bbva';
+        $idList    = 3;
+        $idUpload  = 1;
+        $query = DB::query(Database::SELECT, "CALL sp_takeList(:idUpload, :nameTable, :idList, :idUser)");
+        $query->parameters(array(
+            ':idUpload' => $idUpload, 
+            ':nameTable' => $nameTable, 
+            ':idList' => $idList, 
+            ':idUser' => (int) $idUser
+        ));
+        $query->execute();
     }
 }

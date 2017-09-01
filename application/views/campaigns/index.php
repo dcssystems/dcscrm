@@ -495,6 +495,17 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
+                                            <label class="col-3 col-form-label text-right">Datos cargados</label>
+                                            <div class="col-9">
+                                                <select name="estCampaign" id="estCampaign" required class="form-control custom-select">
+                                                    <option value="" selected>Seleccione datos cargados</option>
+                                                    <?php foreach($uploadData as $upload): ?>
+                                                    <option value="<?php echo $upload->idUpload; ?>"><?php echo $upload->varDescripcion; ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
                                             <label class="col-3 col-form-label text-right">Estado</label>
                                             <div class="col-9">
                                                 <select name="estCampaign" id="estCampaign" required class="form-control custom-select">

@@ -43,6 +43,7 @@ class Controller_Crm_Ajax extends Controller {
         $ds = DIRECTORY_SEPARATOR; 
         $storeFolder = 'uploads';
         $enable_upload = TRUE;
+        //$valesPost = $this->request->post();
         if (!empty($_FILES) && $enable_upload && ($_FILES['file']['error']) == 0) {
             if(file_exists('uploads/' . $_FILES['file']['name'])){
                 $msg["error"] = 'El archivo ya existe: uploads/' . $_FILES['file']['name'];
@@ -57,7 +58,8 @@ class Controller_Crm_Ajax extends Controller {
         }else{
             $msg["error"] = 'Error durante la carga del archivo: ' . $_FILES['file']['error'];
         }
-        echo json_encode($msg);//var_dump($_FILES);       
+        echo json_encode($msg);
+        //var_dump($valesPost);
     }
     
     public function _setDataCliente($name) {
@@ -75,8 +77,9 @@ class Controller_Crm_Ajax extends Controller {
         return $result;        
     }
     
-    public function _saveDataCliente($line) {
+    public function _saveDataCliente($line, $id) {
         ini_set('max_execution_time', 240);
+        $idUpload = $id;
         $modelDataCliente = ORM::factory('Campania_Dataclientes');
             if(!empty($line[0])):
                 $modelDataCliente->values(array(
@@ -147,7 +150,8 @@ class Controller_Crm_Ajax extends Controller {
                     'varDireccion1'         => $line[62],
                     'varDepartamento'       => $line[63],
                     'varProvincia'          => $line[64],
-                    'varDistrito'           => $line[65]
+                    'varDistrito'           => $line[65],
+                    'idupload'              => $idUpload
                 ))
                 ->save();
             endif;             
@@ -164,20 +168,42 @@ class Controller_Crm_Ajax extends Controller {
         $codeCampaign = $this->request->post('codecampaign');
         $estCampaign = $this->request->post('estCampaign');
         $newCampaign = ORM::factory("Campania_Campanias")->values(
-                array(
-                    'idCampania' => '',
-                    'idCliente'  => Session::instance()->get('cliente'),
-                    'varTablacliente' => 'datos_bbva',
-                    'idTipocampania' => $typeCampaign,
-                    'varCodcampania' => $codeCampaign,
-                    'varNombcampania' => $campaign,
-                    'datFechainicio'  => $fecIniDB,
-                    'datFechafinal'  => $fecFinDB,
-                    'idEstado' => $estCampaign,
-                    'datReg' => date('Y-m-d H:m:s')
-                )
-            )->save();
-        echo "<PRE>"  . Debug::dump($newCampaign) . "</PRE>";
+            array(
+                'idCampania' => '',
+                'idCliente'  => Session::instance()->get('cliente'),
+                'varTablacliente' => 'datos_bbva',
+                'idTipocampania' => $typeCampaign,
+                'varCodcampania' => $codeCampaign,
+                'varNombcampania' => $campaign,
+                'datFechainicio'  => $fecIniDB,
+                'datFechafinal'  => $fecFinDB,
+                'idEstado' => $estCampaign,
+                'datReg' => date('Y-m-d H:m:s')
+            )
+        )->save();
+        $response = $this->_setNewList($newCampaign->idCampania);
+        if($response){
+            echo "Se creo con exito la campaña.";
+        }else{
+            echo "Ocurio un error al crear la campaña.";
+        }
+    }
+    
+    public function _setNewList($idCampaign) {
+        $countList = ORM::factory('Campania_Listas')->count_all();        
+        $newList = ORM::factory('Campania_Listas')->values(
+            array(
+                'idLista'       => '',
+                'idCampania'    => $idCampaign,
+                'varNombre'     => 'List '.($countList+1),
+                'datFechacarga' => date('Y-m-d H:m:s'),
+                'intCantreg'    => '',
+                'datReg'        => date('Y-m-d H:m:s'),
+                'datMod'        => '',
+                'idUsuario'     => Session::instance()->get('cliente')
+            )
+        )->save();
+        return $newList;
     }
     
     

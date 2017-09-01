@@ -80,6 +80,8 @@
             //alert(form);
             $.post('<?php echo URL::site('ajax/newcampaign');?>', form, function(data){
                 alert(data);
+                $("#mod-primary").modal('hide');
+                $("#formNewCampaign")[0].reset();
             });
         });
         $("#table3>tbody>tr").click(function(){
@@ -109,10 +111,12 @@
             });
         });
         $("#uploadFile").click(function(){
+            var upload = $('#formUploadFile').serialize();
             var file_data = $('#filePersons').prop('files')[0];
             var form_data = new FormData();
             form_data.append('file', file_data);
             $('#mod-info').modal('show');
+            //console.log(upload + " " + file_data);
             $.ajax({
                 url: '<?php echo URL::site('ajax/uploadfile');?>', // point to server-side PHP script 
                 dataType: 'json', // what to expect back from the PHP script

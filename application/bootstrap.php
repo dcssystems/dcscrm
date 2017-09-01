@@ -218,6 +218,13 @@ Route::set('campaigns', '(<controller>(/<action>(/<id>)))')
         'action'     => 'list|new|edit',
     ));
 
+Route::set('campaigns/testprocedure', '(<controller>(/<action>(/<id>)))')
+    ->defaults(array(
+        'directory'  => 'Crm',
+        'controller' => 'Campaigns',
+        'action'     => 'testprocedure',
+    ));
+
 /**
  * 
  * Route User Session Model, View and Controller 
@@ -228,4 +235,16 @@ Route::set('users/operator','(<controller>(/<action>(/<id>)))')
         'directory'  => 'Crm',
         'controller' => 'User',
         'action'     => 'dashboard',
+    ));
+
+/**
+ * 
+ * Route for Upload in CRM
+ * 
+ */
+Route::set('upload/uploadfile', '(<controller>(/<action>(/<id>)))')
+    ->defaults(array(
+        'directory'  => 'Crm',
+        'controller' => 'Upload',
+        'action'     => 'uploadfile',
     ));
